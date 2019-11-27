@@ -35,7 +35,7 @@ public class Recipe {
 
     @ManyToMany
     @JoinTable(name = "recipe_category" , joinColumns = @JoinColumn(name = "recpie_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> categories;
+    private Set<Category> categories = new HashSet<Category>();
 
     public Long getId() {
         return id;
@@ -101,7 +101,7 @@ public class Recipe {
         this.directions = directions;
     }
 
-    public Set<Ingredient> getIngredient() {
+    public Set<Ingredient> getIngredients() {
         return ingredient;
     }
 
